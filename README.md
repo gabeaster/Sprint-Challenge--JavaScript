@@ -22,7 +22,7 @@ You will notice there are several JavaScript files being brought into the index.
 
 In meeting the minimum viable product (MVP) specifications listed below, you should have a console full of correct responses to the problems given.
 
-## Self-Study Questions - [read]
+## Self-Study Questions - [read][done]
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions.
 
@@ -30,13 +30,26 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+.map returns a new Array with information it's pulled or transformed from an original Array; .forEach runs a task for each item in an Array and doesn't necessarily have to return anything. 
+
 2. What is the difference between a function and a method?
+
+A function is code that takes in arguments and completes a task with them. A method is a function that belongs to an object. 
 
 3. What is closure?
 
+Closures give us the ability to put functions together by using code identified elsewhere. 
+
 4. Describe the four rules of the 'this' keyword.
 
+Window Binding : this will default to the window if other rules aren't applicable but will return undefined if 'use strict' is not applied
+Implicit Binding : this looks to the left of the dot for the object it's referencing
+Explicit Binding : .call .apply .bind all tell this directly what it should refer to
+New Binding : the new keyword constrcuts a new object that this will point to
+
 5. Why do we need super() in an extended class?
+
+super() will extend all of the attributes of the parent class to the child class. Then, child-specific attributes can also be applied after using super().
 
 ## Project Set up [read]
 
@@ -46,10 +59,10 @@ Follow these steps to set up and work on your project:
 - [DONE] Add TL as collaborator on Github.
 - [DONE] Clone your OWN version of Repo (Not Lambda's by mistake!).
 - [DONE] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [DOING] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-- [ ] You are now ready to build this project with your preferred IDE
-- [ ] Implement the project on your Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [DONE] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+- [UNDERSTOOD] You are now ready to build this project with your preferred IDE
+- [UNDERSTOOD] Implement the project on your Branch, committing changes regularly.
+- [UNDERSTOOD] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project:
 
