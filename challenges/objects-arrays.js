@@ -137,14 +137,9 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 const displayNames = [];
 
-
-let strings = function(){
-  graduates.forEach(function(scientific_name, animal_name){
-  return `Name: ${this.animal_name}, Scientific: ${this.scientific_name}.`
-});
-}
-
-displayNames.push(strings);
+zooAnimals.forEach(function(animal){
+  displayNames.push(`Name: ${animal.animal_name}, Scientific: ${animal.scientific_name}.`)
+})
 
 console.log(displayNames);
 
@@ -155,6 +150,11 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 const lowCaseAnimalNames = [];
+
+lowCaseAnimalNames.push(zooAnimals.map(function(animal){
+  return animal.animal_name.toLowerCase();
+}))
+
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -163,14 +163,37 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 */
 const lowPopulationAnimals = [];
+
+lowPopulationAnimals.push(zooAnimals.filter(function(animal){
+  return animal.population < 5;
+}))
+
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
 
+
+const zooAnimals = [
+  { animal_name: "Jackal, asiatic", population: 5, scientific_name: "Canis aureus", state: "Kentucky" },
+  { animal_name: "Screamer, southern", population: 1, scientific_name: "Chauna torquata", state: "Alabama" },
+  { animal_name: "White spoonbill", population: 8, scientific_name: "Platalea leucordia", state: "Georgia" },
+  { animal_name: "White-cheeked pintail", population: 1, scientific_name: "Anas bahamensis", state: "Oregon" },
+  { animal_name: "Black-backed jackal", population: 2, scientific_name: "Canis mesomelas", state: "Washington" },
+  { animal_name: "Brolga crane", population: 9, scientific_name: "Grus rubicundus", state: "New Mexico" },
+  { animal_name: "Common melba finch", population: 5, scientific_name: "Pytilia melba", state: "Pennsylvania" },
+  { animal_name: "Pampa gray fox", population: 10, scientific_name: "Pseudalopex gymnocercus", state: "Connecticut" },
+  { animal_name: "Hawk-eagle, crowned", population: 10, scientific_name: "Spizaetus coronatus", state: "Florida" },
+  { animal_name: "Australian pelican", population: 5, scientific_name: "Pelecanus conspicillatus", state: "West Virginia" },
+];
+
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce(function(totalAnimals, animal){
+  return totalAnimals + animal.population;
+}, 0);
+
+
 console.log(populationTotal);
 
 
