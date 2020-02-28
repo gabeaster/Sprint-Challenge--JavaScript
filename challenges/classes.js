@@ -48,7 +48,12 @@ class CubeMaker extends Cuboid {
     };
 };
 
+const myCube = new CubeMaker ({
+    length : 5,
+    width : 5,
+    height : 5
+})
 //test 
 
-console.log(cubeMaker.cubeVolume());
-console.log(cubeMaker.cubeSurfaceArea());
+console.log(myCube.cubeVolume());
+console.log(myCube.cubeSurfaceArea());
